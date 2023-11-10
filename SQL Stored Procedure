@@ -1,1 +1,46 @@
-S
+#---- Create Table ---#
+
+CREATE TABLE Persons (
+    Id int NOT NULL,
+    FirstName varchar(50),
+    LastName varchar(50),
+    Email varchar(50),
+    PhoneNumber varchar(50),
+    Address varchar(255)
+);
+
+
+#---- Insert Stored Procedure ---#
+
+USE [StoredProcedure]
+GO
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE PROCEDURE [dbo].[Insert_Customer]
+	   @Id INT = NULL,
+	   @FirstName varchar(20),
+	   @LastName varchar(20) = NULL,
+	   @Email	varchar(20),
+	   @PhoneNumber varchar(20),
+	   @Address varchar(50) = NULL
+AS
+BEGIN
+	INSERT INTO [dbo].[Customer] (
+	   FirstName,
+	   LastName,
+	   Email,
+	   PhoneNumber,
+	   Address
+	   )
+    VALUES (
+	   @FirstName,
+	   @LastName,
+	   @Email,
+	   @PhoneNumber,
+	   @Address)
+ 
+SET @Id = SCOPE_IDENTITY()
+END
