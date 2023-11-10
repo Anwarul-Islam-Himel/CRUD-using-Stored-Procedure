@@ -2,11 +2,11 @@
 
 CREATE TABLE Persons (
     Id int NOT NULL,
-    FirstName varchar(50),
-    LastName varchar(50),
-    Email varchar(50),
-    PhoneNumber varchar(50),
-    Address varchar(255)
+    FirstName varchar(20),
+    LastName varchar(20),
+    Email varchar(20),
+    PhoneNumber varchar(20),
+    Address varchar(50)
 );
 
 
